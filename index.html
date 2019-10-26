@@ -1,0 +1,113 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		
+		<meta name="description" content="Présentation sur les tests unitaires avec reveal.js">
+		<meta name="author" content="Jimmy RUNDSTADLER">
+		<title>MoSCoW</title>
+
+		<link rel="stylesheet" href="reveal/css/reset.css">
+		<link rel="stylesheet" href="reveal/css/reveal.css">
+		<link rel="stylesheet" href="reveal/css/theme/black.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="reveal/lib/css/monokai.css">
+
+		<!-- Custom style -->
+		<style type="text/css">
+			#footer {
+				position: absolute;
+				bottom: 0%;
+				left: 1%;
+			}
+			#createdBy {
+				position: absolute;
+				bottom: 0%;
+				left: 50%;
+				transform: translate(-50%, 0%);
+				text-align: center;
+			}
+			p{
+				font-size: smaller;
+			}
+			ul, li{
+				text-align: justify;
+			}
+		</style>
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'reveal/css/print/pdf.css' : 'reveal/css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<!-- Page de garde-->
+				<section>
+					<h3>Les Tests Unitaires</h3>
+					<h1>Parce que tester c'est bien</h1>
+				</section>
+				<!-- Présentation -->
+				<section>
+					<h3>Les tests unitaires c'est quoi ?</h3>
+					<p>
+						MoSCoW est une méthodologie :
+						<small>
+						<ul>
+							<li class="fragment fade-in-then-semi-out">Permettant de définir le niveau de priorité des tâches ou des besoins</li>
+							<li class="fragment fade-in-then-semi-out">Qui a pour unique but de faciliter la prise de décision</li>
+							<li class="fragment fade-in-then-semi-out">Principalement utilisée pour l'assistance à maitrise d'ouvrage et le développement logiciel</li>
+							<li class="fragment fade-in-then-semi-out">Qui prend tout son sens dans un environnement contraint par des délais</li>
+							<li class="fragment fade-in-then-semi-out">Dont les coûts de mise en place et d'apprentissage sont quasi inexistants (la preuve en est, à la fin de cette présentation, vous maitriserez MoSCoW)</li>
+						</ul>
+					</small>
+					</p>
+				</section>
+				<!-- Remerciements / Questions -->
+				<section>
+					<h3>Merci de votre attention</h3>
+					<p>Des questions ?</p>
+				</section>
+			</div>
+			<div id="footer">
+				<small>
+					<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Licence Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a>
+				</small>
+			</div>
+			<div id="createdBy">
+				<small><small>Créée par Jimmy RUNDSTADLER<br />Sources disponibles sur <a href="https://github.com/Jorg722/">github.com/Jorg722</a></small></small>
+			</div>
+		</div>
+
+		<script src="reveal/js/reveal.js"></script>
+
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+
+				// Custom config
+				transition: 'convex',
+				controlsTutorial: true,
+				mouseWheel: true,
+				hideCursorTime: 2000,
+				pdfSeparateFragments: false,
+
+				dependencies: [
+					{ src: 'reveal/plugin/markdown/marked.js' },
+					{ src: 'reveal/plugin/markdown/markdown.js' },
+					{ src: 'reveal/plugin/notes/notes.js', async: true },
+					{ src: 'reveal/plugin/highlight/highlight.js', async: true }
+				]
+			});
+		</script>
+	</body>
+</html>
