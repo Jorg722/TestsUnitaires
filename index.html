@@ -56,20 +56,104 @@
 				</section>
 				<!-- Présentation -->
 				<section>
-					<h3>Les tests unitaires c'est quoi ?</h3>
+					<h3>Pourquoi tester ?</h3>
 					<p>
-						MoSCoW est une méthodologie :
+						Pour commencer, selon vous c'est quoi un test ?
 						<small>
-						<ul>
-							<li class="fragment fade-in-then-semi-out">Permettant de définir le niveau de priorité des tâches ou des besoins</li>
-							<li class="fragment fade-in-then-semi-out">Qui a pour unique but de faciliter la prise de décision</li>
-							<li class="fragment fade-in-then-semi-out">Principalement utilisée pour l'assistance à maitrise d'ouvrage et le développement logiciel</li>
-							<li class="fragment fade-in-then-semi-out">Qui prend tout son sens dans un environnement contraint par des délais</li>
-							<li class="fragment fade-in-then-semi-out">Dont les coûts de mise en place et d'apprentissage sont quasi inexistants (la preuve en est, à la fin de cette présentation, vous maitriserez MoSCoW)</li>
-						</ul>
-					</small>
+							<ul>
+								<li class="fragment fade-in-then-semi-out">Est-ce à l'utilisateur de découvrir les bugs ?</li>
+								<li class="fragment fade-in-then-semi-out">Etes vous sûr que votre code fonctionne ?</li>
+								<li class="fragment fade-in-then-semi-out">Comment prouver qu'il fonctionne ?</li>
+								<li class="fragment fade-in-then-semi-out">Etes vous sûr qu'il fonctionnera toujours si vous y retouchez ?</li>
+								<li class="fragment fade-in-then-semi-out">Etes vous sûr qu'il fonctionnera si quelqu'un d'autre y touche ?</li>
+							</ul>
+						</small>
 					</p>
 				</section>
+
+				<section>
+					<h3>Quoi tester ?</h3>
+					<p>
+						Quels sont les différents niveaux de tests que l'on peut mettre en place ?
+						<small>
+							<ul>
+								<li class="fragment fade-in-then-semi-out">Des tests unitaires</li>
+								<li class="fragment fade-in-then-semi-out">Des tests d'intégration (aka de composants aka de contrats)</li>
+								<li class="fragment fade-in-then-semi-out">Des tests automatisés (aka fonctionnels)</li>
+								<li class="fragment fade-in-then-semi-out">Des tests manuels</li>
+							</ul>
+						</small>
+					</p>
+				</section>
+
+				<section>
+					<h3>La pyramide des tests</h3>
+					<p>
+						<small>
+							Dans la pyramide ci-dessous, la base est la moins couteuse à mettre en place et a le retour le plus rapide, le sommet est le plus couteux, mais le plus proche de l'expérience utilisateur.
+						</small>
+					</p>
+				</section>
+
+
+
+<!--
+				// Quoi tester ?
+					// Pyramide des tests
+				// Quand tester ?
+					// Test Driven Development (TDD) vs Test Last Development (TLD aka Test-After)
+					// Principe du TLD
+					// Principe du TDD
+						// Etapes
+						// Loi
+					// Pro / Con
+						// Temps requis
+						// Courbe d'apprentissage
+						// Productivité et cout de maintenance
+						// Taille du code
+						// Simplicité du code
+					// Comment choisir entre les 2
+						// Nature du produit
+						// Profil et taille de l'équipe
+						// Marché
+						// Clean code recommande TDD
+				// Avec quoi tester ?
+					// Intégration dans Eclipse, et librairies !
+						// JUnit
+						// AssertJ
+						// Mockito
+						// WireMock
+						// Coverage
+					// Couverture de code
+						// Le piège de la couverture de code
+				// Comment tester proprement ? (Partie Test de Clean Code + Au coeur de JUnit)
+					// Garder des tests propres
+					// une assertion par test
+					// un seul concept par test
+					// FIRST ?
+					// Inversion de dépendance
+					// Documentation par les tests
+					// Limite des tests (code mort, code moche, fonction avec trop de responsabilité, etc..)
+				// JUnit (dont exception et no exception)
+					// votre 1er test : fail
+					// quelques exemples de tests
+					// before, after, beforeclass, afterclass
+					// exception
+					// no exception
+				// AssertJ
+					// apport par rapport à JUnit (lecture naturelle)
+					// pu de probleme avec les paramètres de assertEquals notamment
+					// quelques exemple avec assertThat (attention assertThat existe aussi sur JUnit, JUnit reprenant pas mal de chose d'AssertJ)
+					// assertThatThrowBy (les 2 me vont, JUnit ayant sorti assertThrow)
+				// AssertJ ou JUnit ==> les 2 sont compatibles, dont autant prendre le meilleur des 2 !
+				// Pour aller plus loin
+					// assertTimeout
+					// Suite de test
+					// Test paramétrés
+					// Injection de dépendance (context spring, etc..)
+					// Rule
+-->
+				
 				<!-- Remerciements / Questions -->
 				<section>
 					<h3>Merci de votre attention</h3>
