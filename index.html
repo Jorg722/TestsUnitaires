@@ -56,21 +56,52 @@
 				</section>
 				<!-- Présentation -->
 				<section>
+					<h3>Partie 1</h3>
+					<h2>Généralités sur les tests</h2>
+				</section>
+				<section>
+					<h3>C'est quoi un test ?</h3>
+					Pour commencer, selon vous c'est quoi un test ?
+					<p class="fragment fade-in-then-semi-out">
+						<small>
+								Selon wikipedia : "En informatique, le test est une procédure de vérification lors de la programmation d’un logiciel (...) permettant la validation de ce qui a été produit"
+						</small>
+					</p>
+				</section>
+				<section>
+					<h3>C'est quoi un test ?</h3>
+					<p>
+						<small>
+							<ul>
+								<li class="fragment fade-in-then-semi-out">Une preuve de fonctionnement</li>
+								<li class="fragment fade-in-then-semi-out">Une documentation</li>
+								<li class="fragment fade-in-then-semi-out">Une aide à la maintenance</li>
+								<li class="fragment fade-in-then-semi-out">Un gain de temps</li>
+								<li class="fragment fade-in-then-semi-out">Une sécurité</li>
+								<li class="fragment fade-in-then-semi-out">Une aide au refactoring</li>
+								<li class="fragment fade-in-then-semi-out">Un contrat</li>
+								<li class="fragment fade-in-then-semi-out">Un outil d'intégration des nouveaux développeurs</li>
+								<li class="fragment fade-in-then-semi-out">etc...</li>
+								<li class="fragment fade-in-then-semi-out">Bref, pour quasiment tous les projets, c'est une nécessité</li>
+							</ul>
+						</small>
+					</p>
+				</section>
+				<section>
 					<h3>Pourquoi tester ?</h3>
 					<p>
-						Pour commencer, selon vous c'est quoi un test ?
+						Voici quelques questions auxquels je vous invite à répondre : 
 						<small>
 							<ul>
 								<li class="fragment fade-in-then-semi-out">Est-ce à l'utilisateur de découvrir les bugs ?</li>
 								<li class="fragment fade-in-then-semi-out">Etes vous sûr que votre code fonctionne ?</li>
 								<li class="fragment fade-in-then-semi-out">Comment prouver qu'il fonctionne ?</li>
 								<li class="fragment fade-in-then-semi-out">Etes vous sûr qu'il fonctionnera toujours si vous y retouchez ?</li>
-								<li class="fragment fade-in-then-semi-out">Etes vous sûr qu'il fonctionnera si quelqu'un d'autre y touche ?</li>
+								<li class="fragment fade-in-then-semi-out">Etes vous sûr qu'il fonctionnera toujours si quelqu'un d'autre y touche ?</li>
 							</ul>
 						</small>
 					</p>
 				</section>
-
 				<section>
 					<h3>Quoi tester ?</h3>
 					<p>
@@ -80,22 +111,20 @@
 								<li class="fragment fade-in-then-semi-out">Des tests unitaires</li>
 								<li class="fragment fade-in-then-semi-out">Des tests d'intégration (aka de composants aka de contrats)</li>
 								<li class="fragment fade-in-then-semi-out">Des tests automatisés (aka fonctionnels)</li>
-								<li class="fragment fade-in-then-semi-out">Des tests manuels</li>
+								<li class="fragment fade-in-then-semi-out">Des tests manuels (aka utilisateurs)</li>
 							</ul>
 						</small>
 					</p>
 				</section>
-
 				<section>
 					<h3>La pyramide des tests</h3>
 					<p>
 						<small>
-							Dans la pyramide ci-dessous, la base est la moins couteuse à mettre en place et a le retour le plus rapide, le sommet est le plus couteux, mais le plus proche de l'expérience utilisateur.
+							Dans la pyramide ci-dessous, la base est la moins couteuse à mettre en place et permet le retour le plus rapide, le sommet est le plus couteux, mais le plus proche de l'expérience utilisateur.
 						</small>
 					</p>
 					<img src="./img/pyramide.png" width="50%"/>
 				</section>
-
 				<section>
 					<h3>Quand tester ?</h3>
 					<p>
@@ -110,15 +139,19 @@
 				</section>
 				<section>
 					<h3>Principes du TLD</h3>
-					<p>
-						Sans surprise, pour le TLD, le but est d'écrire les tests après le développement. C'est l'approche la plus répandue, notamment pour le code ayant beaucoup d'historique (legacy code) et pour lequel aucun ou très peu de tests sont présents.
+					<p class="fragment fade-in-then-semi-out">
+						Sans surprise, pour le TLD, le but est d'écrire les tests après le développement.
+					</p>
+					<p class="fragment fade-in-then-semi-out">
+						C'est l'approche la plus répandue, notamment pour le code ayant beaucoup d'historique (legacy code) et pour lequel aucun ou très peu de tests sont présents.
 					</p>
 				</section>
 				<section>
 					<h3>Principes du TDD</h3>
 					<p>
 						A l'inverse du TLD, l'approche TDD veut que les tests s'écrivent systématiquement avant le développement.<br />
-						Voici les "lois" du TDD :
+						<br />
+						<span class="fragment fade-in-then-semi-out">Voici les "lois" du TDD :</span>
 						<small>
 							<ul>
 								<li class="fragment fade-in-then-semi-out">Vous devez écrire un test qui échoue avant de pouvoir écrire le code de production correspondant.</li>
@@ -130,58 +163,241 @@
 				</section>
 				<section>
 					<h3>TDD vs TLD</h3>
-					TODOOOOOO
+					<p>
+						Voici les avantages / inconvénients de chacunes de ces approches
+						<small>
+							<ul>
+								<li class="fragment fade-in-then-semi-out">Temps requis à l'écriture : TDD nécessite plus de temps que TLD pour écrire les tests du fait du process itératif, les développeurs passent constamment du code de test au code de production.</li>
+								<li class="fragment fade-in-then-semi-out">Courbe d'apprentissage du code : TDD a une courbe d'apprentissage en pas à pas tandis que TLD a une courbe d'apprentissage quasi inexistante puisque le code est déjà connu au moment des tests</li>
+								<li class="fragment fade-in-then-semi-out">Productivité / Cout de maintenance : TDD permet de rendre la maintenance de plus en plus facile car le produit est stable et les développements fiables, l'approche force à ce que tout code écrit soit forcément testé, contrairement à TLD.</li>
+								<li class="fragment fade-in-then-semi-out">Taille du code : l'avantage va à TLD, mais du fait que, souvent, des cas de tests sont oubliés ou mis de côté et que l'approche ne force pas forcément au refactoring, contrairement à TDD où tous les cas de tests doivent avoir été prévus et écrit.</li>
+								<li class="fragment fade-in-then-semi-out">Simplicité du code : TDD force à utiliser des concepts particuliers (design pattern, mock, etc..) contrairement à TLD. Les concepts sont plus complexes mais le code plus propre.</li>
+							</ul>
+						</small>
+					</p>
+				</section>
+				<section>
+					<h3>TDD vs TLD</h3>
+					<p>
+						Comment choisir entre les 2 approches ?
+						<small>
+							<ul>
+								<li class="fragment fade-in-then-semi-out">Nature du produit : TDD est adapté pour les produits importants, avec un forte attente de fiabilité ou avec une durée de vie importante (ex : logiciel de banque). TLD est suffisant pour de petits projets, avec une durée de vie courte ou peu d'attente niveau fiabilité (ex : site éphémère).</li>
+								<li class="fragment fade-in-then-semi-out">Profil de l'équipe : TDD est particulièrement adapté pour les grosses équipes ou celles accueillant de nouveaux membres, TLD peut être suffisant pour de très petites équipe qui ont une forte maitrise du code.</li>
+								<li class="fragment fade-in-then-semi-out">Marché : le nombre d'utilisateurs et leurs natures peut également beaucoup jouer sur le choix de l'approche</li>
+								<li class="fragment fade-in-then-semi-out">Placement : réactivité vs proactivité, rapidité vs qualité/stabilité/fiabilité, court terme vs long terme, etc..</li>
+								<li class="fragment fade-in-then-semi-out">Recommandation : Clean Code recommande l'utilisation de TDD afin de garantir un maximum de qualité et de maitrise du code. En bonus : les tests documentent le code !</li>
+							</ul>
+						</small>
+					</p>
+				</section>
+				<section>
+					<h3>TDD vs TLD</h3>
+					<p>
+						En résumé : Mieux vaut utiliser l'approche TDD autant que possible afin d'assurer un haut niveau de qualité et une meilleure maitrise du code. TLD peut être utilisé dans des cas très spécifiques (projet avec peu d'attente de fiabilité ou à durée de vie courte) et/ou éventuellement en tant que 1ère approche de la mise en place de tests unitaires.
+					</p>
+				</section>
+				<section>
+					<h3>Quelques pièges à éviter</h3>
+					<p>
+						<small>
+							<ul>
+								<li class="fragment fade-in-then-semi-out">Vouloir atteindre à tout prix une couverture de tests à 100% sans savoir ce qui est réellement testé</li>
+								<li class="fragment fade-in-then-semi-out">Générer les tests via des outils sans savoir comment modifier le code généré</li>
+								<li class="fragment fade-in-then-semi-out">Mettre le code de test en production</li>
+								<li class="fragment fade-in-then-semi-out">Tester du code mort</li>
+								<li class="fragment fade-in-then-semi-out">Ne pas se donner ou ne pas prendre le temps de faire les tests (donc d'assurer que notre livrable fonctionne)</li>
+								<li class="fragment fade-in-then-semi-out">Oublier que le code de test reste avant tout du code (Les bonnes pratiques s'appliquent aussi aux tests !)</li>
+							</ul>
+						</small>
+					</p>
 				</section>
 
-<!--
-				// Quand tester ?
-					// Pro / Con
-						// Temps requis
-						// Courbe d'apprentissage
-						// Productivité et cout de maintenance
-						// Taille du code
-						// Simplicité du code
-					// Comment choisir entre les 2
-						// Nature du produit
-						// Profil et taille de l'équipe
-						// Marché
-						// Clean code recommande TDD
-				// Avec quoi tester ?
-					// Intégration dans Eclipse, et librairies !
-						// JUnit
-						// AssertJ
-						// Mockito
-						// WireMock
-						// Coverage
-					// Couverture de code
-						// Le piège de la couverture de code
-				// Comment tester proprement ? (Partie Test de Clean Code + Au coeur de JUnit)
-					// Garder des tests propres
-					// une assertion par test
-					// un seul concept par test
-					// FIRST ?
-					// Inversion de dépendance
-					// Documentation par les tests
-					// Limite des tests (code mort, code moche, fonction avec trop de responsabilité, etc..)
-				// JUnit (dont exception et no exception)
-					// votre 1er test : fail
-					// quelques exemples de tests
-					// before, after, beforeclass, afterclass
-					// exception
-					// no exception
-				// AssertJ
-					// apport par rapport à JUnit (lecture naturelle)
-					// pu de probleme avec les paramètres de assertEquals notamment
-					// quelques exemple avec assertThat (attention assertThat existe aussi sur JUnit, JUnit reprenant pas mal de chose d'AssertJ)
-					// assertThatThrowBy (les 2 me vont, JUnit ayant sorti assertThrow)
-				// AssertJ ou JUnit ==> les 2 sont compatibles, dont autant prendre le meilleur des 2 !
-				// Pour aller plus loin
-					// assertTimeout
-					// Suite de test
-					// Test paramétrés
-					// Injection de dépendance (context spring, etc..)
-					// Rule
--->
+				<section>
+					<h3>Partie 2</h3>
+					<h2>Outils et principes pour les développeurs</h2>
+				</section>
+				<section>
+					<h3>Avec quoi tester ?</h3>
+					<p>
+						Dans Eclipse, il y a une vue dédiée pour les tests unitaires :
+						<img class="fragment fade-in-then-semi-out" src="./img/TU_Eclipse.png" width="40%"/>
+					</p>
+				</section>
+				<section>
+					<h3>Avec quoi tester ?</h3>
+					<p>
+						Dans Eclipse, il y a une vue dédiée pour la couverture :
+						<img class="fragment fade-in-then-semi-out" src="./img/Couverture_Eclipse.png" width="90%"/>
+					</p>
+				</section>
+				<section>
+					<h3>Avec quoi tester ?</h3>
+					<p>
+						Dans Android Studio, il y a une vue dédiée pour les TU :
+						<img class="fragment fade-in-then-semi-out" src="./img/TU_AndroidStudio.png" width="90%"/>
+					</p>
+				</section>
+				<section>
+					<h3>Avec quoi tester ?</h3>
+					<p>
+						Dans Android Studio, il y a une vue dédiée pour la couverture :
+						<img class="fragment fade-in-then-semi-out" src="./img/Couverture_AndroidStudio.png" width="90%"/>
+					</p>
+				</section>
+				<section>
+					<h3>Avec quoi tester ?</h3>
+					<p>
+						Dans Android Studio, il y a également un outil de génération de tests automatisés via Espresso, mais il n'est pas recommandé de l'utiliser sans savoir utiliser Espresso sans ce générateur.
+					</p>
+				</section>
+				<section>
+					<h3>Avec quoi tester ?</h3>
+					<p>
+						Beaucoup de librairies existent pour nous aider à assurer les différents niveaux de tests
+						<small>
+							<ul>
+								<li class="fragment fade-in-then-semi-out">Test unitaires et tests d'intégration : JUnit, AssertJ, TestNG, etc..</li>
+								<li class="fragment fade-in-then-semi-out">Isolation des tests : Mockito, WireMock, MockWebServer, RestMockServer, MockServer, etc..</li>
+								<li class="fragment fade-in-then-semi-out">Couverture de tests : Jacoco, Cobertura, CodeCover, etc...</li>
+								<li class="fragment fade-in-then-semi-out">Tests automatisés : Cucumber, Selenium, Fitness, Espresso, Spoon, etc...</li>
+							</ul>
+						</small>
+					</p>
+				</section>
+				<section>
+					<h3>Avec quoi tester ?</h3>
+					<p>
+						Dans notre cas, nous allons utiliser en priorité : 
+						<small>
+							<ul>
+								<li class="fragment fade-in-then-semi-out">JUnit ET AssertJ pour les tests unitaires</li>
+								<li class="fragment fade-in-then-semi-out">Mockito pour l'isolation de dépendances</li>
+								<li class="fragment fade-in-then-semi-out">WireMock pour l'isolation de web-services</li>
+								<li class="fragment fade-in-then-semi-out">Jacoco pour la couverture de tests (inclu par défaut dans Eclipse et dans Android Studio)</li>
+								<li class="fragment fade-in-then-semi-out">Espresso et Spoon pour les tests automatisés via Android Studio</li>
+							</ul>
+						</small>
+					</p>
+				</section>
+				<section>
+					<h3>Clean Code donc Clean Test</h3>
+					<p>
+						<small>
+						<span class="fragment fade-in-then-semi-out">Comme dit précédemment, les tests sont du code, il est donc nécessaire d'appliquer les régles du Clean Code mais également certaines règles supplémentaires.</span>
+						<br /><br /><span class="fragment fade-in-then-semi-out">Modifier un test ne doit être ni couteux ni compliqué au risque qu'écrire les tests nécessitent plus de temps que d'écrire le code de production.</span>
+						<br /><br /><span class="fragment fade-in-then-semi-out">Des tests grossiers sont parfois même pires que de n'avoir aucun test !</span>
+						</small>
+					</p>
+				</section>
+				<section>
+					<h3>Clean Code donc Clean Test</h3>
+					<small>
+						"Le code de test est aussi important que le code de production, il ne représente pas un travail de seconde zone, et exige réflexion, conception et soin. Il doit rester aussi propre que le code de production."(cf : Clean Code par Uncle Bob)
+					</small>
+				</section>
+				<section>
+					<h3>Test unitaire ?</h3>
+					<p>
+						Qu'est-ce qui définit qu'un test est unitaire ou non ?
+					</p>
+					<p class="fragment fade-in-then-semi-out">
+						Réponse : il ne test qu'une seule et unique chose
+					</p>
+				</section>
+				<section>
+					<h3>Clean Test</h3>
+					<p>
+						Voici quelques règles à appliquer pour avoir des tests propres (donc lisibles) :
+						<small>
+							<ul>
+								<li class="fragment fade-in-then-semi-out">N'avoir qu'une seule assertion (vérification) par test (d'où le terme de test UNITAIRE)</li>
+								<li class="fragment fade-in-then-semi-out">N'avoir qu'un seul concept par test</li>
+								<li class="fragment fade-in-then-semi-out">Utiliser l'écriture GWT</li>
+								<li class="fragment fade-in-then-semi-out">Utiliser les règles FIRST</li>
+								<li class="fragment fade-in-then-semi-out">Appliquer TDD ou en TLD : concevoir son code pour que celui-ci soit facilement testable</li>
+								<li class="fragment fade-in-then-semi-out">Si besoin, simplifier les tests en simplifiant le code de production</li>
+							</ul>
+						</small>
+					</p>
+				</section>
+				<section>
+					<h3>Ecriture GWT</h3>
+					<p>
+						L'écriture GWT permet l'écriture d'un test en 3 composantes ou étapes :
+						<small>
+							<ul>
+								<li class="fragment fade-in-then-semi-out">Given : les données dont on a besoin pour le test</li>
+								<li class="fragment fade-in-then-semi-out">When : l'événement qui va être testé</li>
+								<li class="fragment fade-in-then-semi-out">Then : l'assertion ou vérification</li>
+								<li class="fragment fade-in-then-semi-out">Nos tests deviennent alors lisibles de cette façon : Etant donné x (Given) quand on fait y (When) alors on obtient z (Then)</li>
+								<li class="fragment fade-in-then-semi-out">Cette écriture est également connu sous le nom du "3A Rule" : Arrange, Act, Assert</li>
+							</ul>
+						</small>
+					</p>
+				</section>
+				<section>
+					<h3>Les règles FIRST</h3>
+					<p>
+						Tout test écrit doit, autant que possible, respecter les 5 règles formant l'acronyme FIRST : 
+						<small>
+							<ul>
+								<li class="fragment fade-in-then-semi-out">Fast (rapide) : Plus les tests sont rapides, plus on peut les executer souvent et facilement, et plus on peut s'appuyer dessus pour éviter une dégradation du code</li>
+								<li class="fragment fade-in-then-semi-out">Independent (indépendant) : Les tests ne doivent pas dépendre les uns des autres. On doit pouvoir executer les tests dans l'ordre que l'on souhaite.</li>
+								<li class="fragment fade-in-then-semi-out">Repeatable (reproductible) : Un même test lancé plusieurs fois doit mener au même résultat (même dans un environnement changeant)</li>
+								<li class="fragment fade-in-then-semi-out">Self-Validating (auto-validant) : Les tests doivent avoir un résultat binaire, ils réussissent ou ils échouent, il ne faut pas avoir à ouvrir un log ou comparer manuellement 2 fichiers par exemple</li>
+								<li class="fragment fade-in-then-semi-out">Timely (au moment opportun) : privilégier TDD pour ne jamais avoir à dire qu'un code est trop complexe à tester ou que la date de livraison ne nous permet pas de tester !</li>
+							</ul>
+						</small>
+					</p>
+				</section>
+				<section>
+					<h3>Heuristiques du Clean Test (1/2)</h3>
+					<p>
+						Clean Code écrit quelques indicateurs ou heuristiques sur les tests :
+						<small>
+							<ul>
+								<li class="fragment fade-in-then-semi-out">T1 : Tests insuffisants - Tant qu'au moins une condition/branche/calcul n'est pas vérifié, les tests ne sont pas suffisants</li>
+								<li class="fragment fade-in-then-semi-out">T2 : Utiliser un outil d'analyse de couverture - permet de détecter T1</li>
+								<li class="fragment fade-in-then-semi-out">T3 : Ne pas omettre les tests triviaux - ils sont faciles à écrire et leur valeur documentaire est élevée par rapport au faible coût de production</li>
+								<li class="fragment fade-in-then-semi-out">T4 : Un test ignoré est une ambiguité à lever - on peut, en dernier recours, utiliser @Ignore dans l'attente de lever de l'ambiguité</li>
+								<li class="fragment fade-in-then-semi-out">T5 : Tester aux conditions limites - en général, ce sont les cas particuliers qui présentent les plus gros soucis</li>
+							</ul>
+						</small>
+					</p>
+				</section>
+				<section>
+					<h3>Heuristiques du Clean Test (2/2)</h3>
+					<p>
+						Clean Code écrit quelques indicateurs ou heuristiques sur les tests :
+						<small>
+							<ul>
+								<li class="fragment fade-in-then-semi-out">T6 : Tester autour des bugs - Un bug peut en cacher un autre, donc si un test échoue, lancer également tout ceux en rapport</li>
+								<li class="fragment fade-in-then-semi-out">T7 : Les motifs d'échec sont révélateurs - Ayez les outils adaptés dans l'IDE, rouge/vert + stack sont visuels !</li>
+								<li class="fragment fade-in-then-semi-out">T8 : Les motifs dans la couverture de tests sont révélateurs : un code non couvert peut expliquer l'échec d'autre portion de code</li>
+								<li class="fragment fade-in-then-semi-out">T9 : Les tests doivent être rapides - un test lent est un test qui ne sera pas executé</li>
+							</ul>
+						</small>
+					</p>
+				</section>			
+				<section>
+					<h3>Quelques conventions et préconisations</h3>
+					<p>
+						<small>
+							<ul>
+								<li class="fragment fade-in-then-semi-out">Les tests doivent être dans un dossier séparé (test et androidTest pour Android Studio par exemple) afin de pouvoir facilement les exclure du livrable destiné à la production</li>
+								<li class="fragment fade-in-then-semi-out">L'organisation des classes de tests doit autant que possible suivre celle du code de production</li>
+								<li class="fragment fade-in-then-semi-out">Une classe de test doit tester une et une seule classe de production (ou une partie de celle-ci dans certains cas particuliers)</li>
+								<li class="fragment fade-in-then-semi-out">On suffixe les classes de test par Test (ex : ProduitTest teste la classe Produit) ce qui permet à des outils tel que Maven d'utiliser une regex facilement</li>
+								<li class="fragment fade-in-then-semi-out">Il y a plusieurs façon de nommer les méthodes de tests, celle la plus répandue consiste à reprendre le nom de la méthode à tester suivi du retour attendu (ex : isEmptyTrue() ou isEmptyReturnTrue() pour une méthode isEmpty())</li>
+							</ul>
+						</small>
+					</p>
+				</section>
+				<section>
+					<h3>Partie 3</h3>
+					<h2>Kata</h2>
+				</section>
 				
 				<!-- Remerciements / Questions -->
 				<section>
