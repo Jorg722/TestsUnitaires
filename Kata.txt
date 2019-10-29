@@ -1,0 +1,60 @@
+Coding Dojo TDD + JUnit + AssertJ + Mockito + WireMock
+
+Etape du TDD :
+	- Ecrire un test qui échoue
+	- Ecrire le code minimal pour que le test réussisse
+
+Dans ce kata, l'approche TDD est imposé
+	
+------------------------------	
+JUnit (Voiture)
+	@Test
+	fail
+	assertTrue/assertFalse
+	assertEquals
+	assertNull/assertNotNull
+	@Test(timeout)
+	@Test(expected)
+	@Test(expected=Test.None.class)
+	assertThrow	
+	assumeNoException 
+	assertTimeout
+	@Before/@After ou @BeforeEach/@AfterEach
+	@BeforeClass/@AfterClass
+	@RunWith(Suite.class) avec @SuiteClasses({ Test.class })
+	
+AssertJ (Voiture)
+	assertThat().isTrue() / isFalse()
+	assertThat().isEqualTo() / isEqualByComparing() / isBlank / isEqualToIgnoringCase() / contains()
+	isNull() / isNotNull
+	assertThatThrowBy / assertThatCode
+	
+AssertJ (Layus sur les avantages)
+	Plus complet
+	Lecture naturelle (assertEquals)
+	JUnit reprend pas mal de choses d'assertJ au fur et à mesure, mais autant prendre le meilleure des 2 mondes
+	
+Mockito
+	Mock
+	When
+	Verify
+	Spy
+	
+WireMock + PostMan Avancé
+	Configuration
+		protected final WireMockServer server = new WireMockServer();
+		WireMock.configureFor("localhost", 8080);
+		server.start();
+		server.stop();
+	GET
+		stubFor(get(urlPathEqualTo(PATH_TO_ARTICLE))
+					.withQueryParam(PARAM_EAN, equalTo(ean))
+					.willReturn(aResponse()
+							.withHeader(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_JSON)
+							.withBodyFile("dateLimiteConsommationPresente.json")));
+		Fichier JSON à mettre dans \src\test\resources\__files\dateLimiteConsommationPresente.json				
+							
+	POST			
+		stubFor(post(urlPathEqualTo(PATH_MVT_STOCK))
+					.willReturn(aResponse().withStatus(Status.OK.getStatusCode())
+							.withHeader(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_JSON)));
